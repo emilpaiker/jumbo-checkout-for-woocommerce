@@ -1,0 +1,236 @@
+
+/* This file styles the elements of the jumbo checkout for WooCommerce Plugin */
+
+/* Set the styling variables here: */
+
+:root{
+    --jcfp-primary-color: darkgrey; /* The primary color for the jcfp plugin */
+}
+
+/* End of styling variables */
+
+/* Form Containing the trigger button and the checkout sequence */
+
+#jcfw-checkout-sequence-form {
+
+    justify-content: center;
+    align-items: center;
+
+  }
+
+/* Container for the checkout form */
+
+#jcfw-checkout-sequence-container {
+
+  width: 36%;
+  left: 30%;
+
+}
+
+/* Button that triggers the chekout sequence */
+
+.checkout-sequence-btn {
+
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.checkout-sequence-btn > input {
+
+  background-color: var(--jcfp-primary-color) !important;
+  color: black !important;
+  box-shadow: 2px 5px #888888 !important;
+
+}
+
+/* Reduce space between page heading and Button that triggers large display Sequence */
+
+.entry-header{
+
+  padding-bottom: 1rem !important;
+
+}
+
+
+/* Container that holds the checkout sequence */
+
+.checkout-sequence-container {
+  transition: transform 500ms ease;
+  transform: translateX(2000px);
+  position: absolute;
+  margin: 20px;
+  width: 80%;
+  position: absolute;
+  background: #fff;
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 10 !important;
+  font-size: 2rem;
+
+}
+
+.checkout-sequence-container.show{
+
+  transform: translateX(0);
+
+}
+
+.checkout-sequence-container > input {
+
+  margin:auto;
+  width: 100%;
+  margin: 0.2rem;
+  text-align: center;
+  background-color: var(--jcfp-primary-color) !important;
+  color: black !important;
+
+}
+
+.checkout-sequence-container > h2 {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 .5rem 0 !important;
+
+}
+
+/* Checkout Sequence "Next" Button */
+
+#jcfw-show-next-field-btn {
+
+  background-color: var(--jcfp-primary-color) !important;
+  color: black !important;
+  box-shadow: 2px 5px #888888 !important;
+
+}
+
+/* Close button ("x") on the checkout sequence field  */
+
+.close {
+
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  font-size: 2rem;
+  z-index: 10;
+  cursor: pointer;
+
+}
+
+/* Overlay that lies underneath the checkout sequence field, covering the rest of the page */
+
+.jcfw-overlay-cl {
+
+  background-color: gray;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 9;
+  opacity: .85;
+  display: none;
+  position: fixed;
+  top:0;
+  left:0;
+
+}
+
+.jcfw-overlay-cl.active{
+
+  display: inherit !important;
+  animation: fadebackground 2s;
+
+}
+
+@keyframes fadebackground {
+
+  from {opacity: 0;}
+  to {opacity: .85;}
+
+}
+
+/* Hide elements until they are required */
+
+.hidden_element {
+
+  display: none !important;
+
+}
+
+/* Enable smooth scrolling on supported browsers */
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+/* Country selection area */
+
+.jcfw_billig_country_cl { /* Country selection form */
+
+  display: flex;
+  margin: auto;
+  width: 50%;
+  font-size: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+
+}
+
+.jcfw_billig_country_cl::-webkit-scrollbar { /* scrollbar for the country selection dropdown */
+
+  width: 40px;
+
+}
+
+.jcfw_billig_country_cl::-webkit-scrollbar-track {
+
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+
+}
+
+.jcfw_billig_country_cl::-webkit-scrollbar-thumb {
+
+  background: black;
+  border-radius: 5px;
+
+}
+
+/* Payment Gateway selection area */
+
+.jcfw_payment_cl {
+
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.jcfw_payment_option {
+
+  margin: .5rem;
+  padding: .5rem;
+  border: 2px solid black;
+  color: black;
+
+}
+
+.jcfw_payment_option input[type='radio'] {
+
+     transform: scale(1.7) !important;
+     margin-right: .5rem;
+
+ }
+
+ .jcfw_payment_option label {
+
+   cursor: pointer;
+
+ }
